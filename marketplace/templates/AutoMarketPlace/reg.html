@@ -1,0 +1,69 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AutoMarketplace</title>
+	<link rel="icon" href="{% static 'images/logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reg_style.css' %}">
+	<link rel="stylesheet" href="{% static 'libs/bootstrap-reboot.min.css' %}">
+	<link rel="stylesheet" href="{% static 'libs/bootstrap-grid.min.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<nav class="navbar">
+	<div class="container">
+		<div class="head-logo">
+			<img src="{% static 'images/logo.png' %}" alt="AutoMarketplace" class="logo-img">
+			<a href="{% url 'index' %}" class="navbar-brand">AutoMarketplace.ua</a>
+		</div>
+			<div class="navbar-wrap">		
+				<ul class="navbar-menu">
+					<li><a href="{% url 'log_in' %}">Увійти</a></li>
+					<li><a href="{% url 'reg' %}">Зареєструватись</a></li>
+				</ul>
+
+		<a href="#" class="submitanad">Подати оголошення</a>
+		</div>
+	</div>
+</nav>
+</header>
+    <main class="main">
+        <div class="circle"></div>
+        <div class="register-form-contrainer">
+            <h1 class="form-title">
+                Реєстрація
+            </h1>
+            <form id="regForm" action="#" method="post">
+                {% csrf_token %}
+                <div class="form-fiends">
+                    <label for="">Email</label>
+                    {{form.email}}
+                </div>                
+                <div class="form-fiends">
+                    <label for="">Ім'я</label>
+                    {{form.username}}
+                </div>
+                <div class="form-fiends">
+                    <label for="">Пароль</label>
+                    {{form.password1}}
+                </div>
+                <div class="form-fiends">
+                    <label for="">Повторіть пароль</label>
+                    {{form.password2}}
+                </div>
+                <div class="form-buttons">
+                    <button class="button" type="submit" onclick="submitForm()">Зареєструватись</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

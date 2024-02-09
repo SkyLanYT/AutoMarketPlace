@@ -1,0 +1,170 @@
+body {
+	position: relative;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #000;
+	min-width: 320px;
+	overflow-x: hidden;
+	height: auto;
+}
+
+/* Меню сайту */
+
+.navbar	{
+	width: 100%;
+	height: 70px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+
+}
+
+.navbar	.container {
+	height: inherit;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar-menu {
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 0;
+}
+
+.navbar-menu li {
+	display: inline-block;
+}
+
+.navbar-menu li a{
+	display: inline-block;
+	color: #000;
+	opacity: 0.6;
+	text-decoration: none;
+	padding: 10px;
+	transition: all .07s ease-in-out;
+}
+
+.navbar-menu li a:hover{
+	opacity: 1;
+}
+
+.navbar-wrap {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.submitanad {
+	margin-left: 30px;
+	padding: 10px 25px;
+	background-color: rgba(3, 173, 60);
+	border-radius: 100px;
+	color: white;
+	text-decoration: none;
+	box-shadow: 0 4px 6px rgba(3, 173, 60, .2);
+	transition: all .1s ease-in-out;
+}
+
+.submitanad:hover {
+	transform: scale(1.04);
+	color: white;
+	box-shadow: 0 9px  9px rgba(86, 255, 80, 0.2);
+}
+
+.logo-img {
+	display: flex;
+	height: 40px;
+	width: 40px;
+	/* padding-left: 1em; */
+}
+
+.head-logo {
+	display: inline-flex;
+}
+
+.navbar-brand {
+	font-weight: 700;
+	font-size: 26px;
+	text-decoration: none;
+	color: #000;
+	padding-left: 0.4em;
+	padding-top: 0.1em;
+}
+
+.navbar-brand:hover {
+	color: rgba(3, 173, 60, 0.74);
+	transition: all .07s ease-in-out;
+}
+
+/*Button*/
+
+.button_add_ad {
+	margin: auto;
+	margin-top: 20px;
+	border-radius: 5px;
+    position: sticky;
+	display: block;
+	left: 650px;
+	background-color: #0e938a;
+	background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+	border: none;
+	z-index: 1;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.button_add_ad:after {
+	position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 5px;
+   background-color: #4dccc6;
+background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+
+.button_add_ad:hover {
+	color: #fff;
+}
+
+.button_add_ad:hover:after {
+  top: 0;
+  height: 100%;
+}
+.button_add_ad:active {
+  top: 2px;
+}
+
+/*Форми оголошення*/
+
+.add_advert {
+    /*display: flex;*/
+    /*align-content: center;*/
+    /*justify-content: space-between;*/
+}
+
+.form-container {
+	position: static;
+    /*top: 100px;*/
+    /*left: 580px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-class {
+	width: 400px;
+	height: 35px;
+	text-align: center;
+}

@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AutoMarketplace</title>
+	<link rel="icon" href="{% static 'images/logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'libs/bootstrap-reboot.min.css' %}">
+	<link rel="stylesheet" href="{% static 'libs/bootstrap-grid.min.css' %}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<nav class="navbar">
+	<div class="container">
+		<div class="head-logo">
+			<img src="{% static 'images/logo.png' %}" alt="AutoMarketplace" class="logo-img">
+			<a href="{% url 'home' %}" class="navbar-brand">AutoMarketplace.ua</a>
+		</div>
+			<div class="navbar-wrap">		
+				<ul class="navbar-menu">
+					{% if request.user.is_authenticated %}
+						<li><a href="{% url 'detail_user' %}">Вітаємо, {{request.user}}</a></li>
+					{% else %}
+						<li><a href="{% url 'log_in' %}">Увійти</a></li>
+						<li><a href="{% url 'reg' %}">Зареєструватись</a></li>
+					{% endif %}
+				</ul>
+
+		<a href="{% url 'advertisement' %}" class="submitanad">Подати оголошення</a>
+		</div>
+	</div>
+</nav>
+</header>
+<div class="content-container">
+	{% for advertisement in advertisements %}
+        <div class='ad-container' style="margin:50px 50px 50px;">
+			<div class='ad'>
+				<div class="images">
+					 {% if advertisement.photo1 %}
+					<img src="{{ advertisement.photo1.url}}" style="width: 300px; height: 220px;">
+				{% endif %}
+				<div class="group-images">
+				{% if advertisement.photo2 %}
+					<img src="{{ advertisement.photo2.url }}" style="width: 150px; height: 110px;">
+				{% endif %}
+				{% if advertisement.photo3 %}
+					<img src="{{ advertisement.photo3.url }}" style="width: 150px; height: 110px;">
+				{% endif %}
+				</div>
+				</div>
+				<h2 class='ad_title'>{{ advertisement.title }}</h2>
+				<p class="ad_price">Ціна: {{ advertisement.price }}$</p>
+				<p class="description_title" >Опис</p>
+				<p class="ad_description">{{ advertisement.description }}</p>
+				<p class="ad_number_phone">Номер власника: +380{{advertisement.number_phone}}</p>
+			</div>
+        </div>
+    	{% endfor %}
+</div>
+</body>
+</html>
+
+<!--style="color: #030d1f; font-size: 16px; font-weight: revert;"-->
